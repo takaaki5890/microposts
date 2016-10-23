@@ -1,8 +1,19 @@
-<h1>
-  
-<%= gravatar_for @user %>
+<div class="logo"><%= gravatar_for @user %></div>
 
-  
-<%= @user.name %>
+<div class="show_layout">
+    <span class="btn btn-sm btn-primary">ユーザ名</span>
+    
+    <%= @user.name %>
+</div>
 
-</h1>
+<div class="show_layout">
+    <span class="btn btn-sm btn-primary">メールアドレス</span>
+    
+    <%= @user.email %>
+</div>
+
+<div class="show_layout">
+    <span class="btn btn-sm btn-primary">出身</span>
+    
+    <%= @user.area %>
+</div>
