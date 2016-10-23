@@ -1,19 +1,18 @@
-<div class="logo"><%= gravatar_for @user %></div>
-
-<div class="show_layout">
-    <span class="btn btn-sm btn-primary">ユーザ名</span>
-    
-    <%= @user.name %>
-</div>
-
-<div class="show_layout">
-    <span class="btn btn-sm btn-primary">メールアドレス</span>
-    
-    <%= @user.email %>
-</div>
-
-<div class="show_layout">
-    <span class="btn btn-sm btn-primary">出身</span>
-    
-    <%= @user.area %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
+  </div>
 </div>
